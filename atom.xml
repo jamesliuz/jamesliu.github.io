@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-03T07:36:31.076Z</updated>
+  <updated>2019-07-03T08:42:44.648Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/07/03/Vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://yoursite.com/2019/07/03/Vim常用命令/</id>
     <published>2019-07-03T07:16:45.000Z</published>
-    <updated>2019-07-03T07:36:31.076Z</updated>
+    <updated>2019-07-03T08:42:44.648Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/.com//vim.png" alt="vim"></p><p>进入vi<br>vi filename                打开或新建文件，并将光标置于第一行首</p><p>vi +n filename           打开文件，并将光标置于第 n行首</p><p>vi + filename             打开文件，并将光标置于最后一行首</p><p>vi -r filename            在上次正用 vi编辑时发生系统崩溃，恢复文件</p><p>vi file1….filen            打开多个文件，依次编辑</p><p>vi的工作模式<br>命令行模式 （command mode）：控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入Insert mode下，或者到 last line mode。</p><p>插入模式（Insert mode）：只有在 Insert mode 下，才可以做文字输入，按「ESC」键可回到命令行模式。</p><p>底行模式（last line mode）：将文件保存或退出 vi，也可以设置编辑环境，如寻找字符串、列出行号等。</p>]]></content>
     

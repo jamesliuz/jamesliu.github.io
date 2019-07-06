@@ -191,7 +191,10 @@ var _hmt = _hmt || [];
 <p>在CMD中输入：java或者java -version，不显示不是内部命令等，说明安装成功。</p>
 <p>2.安装Hadoop，并配置环境变量</p>
 <ul>
-<li>下载hadoop：<code>https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz</code><br> <img src="https://img-blog.csdnimg.cn/20190706102017275.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZG9vbw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>下载hadoop：<code>https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz</code></li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/06/ZwwCfP.png" alt="ZwwCfP.png"></p>
+<ul>
 <li>解压hadoop-2.7.7.tar.gz特定路径，如：D:\adasoftware\hadoop</li>
 <li>添加系统变量HADOOP_HOME：D:\adasoftware\hadoop</li>
 <li>在系统变量PATH中添加：D:\adasoftware\hadoop\bin</li>
@@ -208,17 +211,19 @@ var _hmt = _hmt || [];
 <li>新建系统变量SPARK_HOME：<code>D:\adasoftware\spark-2.4.3-bin-hadoop2.7;</code></li>
 </ul>
 <p>4.下载安装anaconda<br>anaconda集成了python解释器和大多数python库，安装anaconda 后不用再安装python和pandas numpy等这些组件了。<a href="https://www.continuum.io/downloads" target="_blank" rel="noopener">下载地址</a>。最后将python加到path环境变量中。</p>
-<p>5.在CMD中运行pyspark，出现类似下图说明安装配置正常：<img src="https://img-blog.csdnimg.cn/2019070611104145.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZG9vbw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>出现这种warning是因为JDK版本为12，太高了，但是不影响运行。没有影响。</p>
+<p>5.在CMD中运行pyspark，出现类似下图说明安装配置正常</p>
+<p><img src="https://s2.ax1x.com/2019/07/06/ZwwLhq.png" alt="ZwwLhq.png"></p>
+<p>出现这种warning是因为JDK版本为12，太高了，但是不影响运行。没有影响。</p>
 <p>6.在pycharm中配置spark</p>
 <ul>
 <li>打开PyCharm，创建一个Project。然后选择“Run” -&gt;“Edit Configurations”–&gt;点击+创建新的python Configurations</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/20190706115159190.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZG9vbw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://s2.ax1x.com/2019/07/06/Zw0l4I.png" alt="Zw0l4I.png"></p>
 <ul>
 <li>选择 “Environment variables” 增加SPARK_HOME目录与PYTHONPATH目录。</li>
 </ul>
 <pre><code>- SPARK_HOME:Spark安装目录
-- PYTHONPATH:Spark安装目录下的Python目录</code></pre><p> <img src="https://img-blog.csdnimg.cn/2019070612030626.?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211ZG9vbw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+- PYTHONPATH:Spark安装目录下的Python目录</code></pre><p><img src="https://s2.ax1x.com/2019/07/06/Zw0Jv8.png" alt="Zw0Jv8.png"></p>
 <ul>
 <li><p>选择 File-&gt;setting-&gt;你的project-&gt;project structure</p>
 </li>
@@ -230,7 +235,8 @@ var _hmt = _hmt || [];
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line"># Path for spark source folder</span><br><span class="line">os.environ[&apos;SPARK_HOME&apos;] = &quot;D:\adasoftware\spark&quot;</span><br><span class="line"></span><br><span class="line"># Append pyspark to Python Path</span><br><span class="line">sys.path.append(&quot;D:\adasoftware\spark\python&quot;)</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    from pyspark import SparkContext</span><br><span class="line">    from pyspark import SparkConf</span><br><span class="line"></span><br><span class="line">    print(&quot;Successfully imported Spark Modules&quot;)</span><br><span class="line">except ImportError as e:</span><br><span class="line">    print(&quot;Can not import Spark Modules&quot;, e)</span><br><span class="line">    sys.exit(1)</span><br></pre></td></tr></table></figure>
 
-<p>若程序正常输出: “Successfully imported Spark Modules”就说明环境已经可以正常执行。<br><img src="https://img-blog.csdnimg.cn/20190706121037822." alt="在这里插入图片描述"></p>
+<p>若程序正常输出: “Successfully imported Spark Modules”就说明环境已经可以正常执行。</p>
+<p><img src="https://s2.ax1x.com/2019/07/06/Zw0tKS.png" alt="Zw0tKS.png"></p>
 
       
 
@@ -497,6 +503,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">spark</a>
               </li>
              
@@ -506,10 +516,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">pycharm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vim</a>
               </li>
             
             <div class="clearfix"></div>
